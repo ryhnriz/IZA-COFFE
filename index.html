@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" 
+content="EMtadwv1tyHJXfkjRhZJ4tLZXkjgWAFqkZ1k-OhY764" />
+<title>IZA COFFEE - Pesan online, tanpa antre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="announce">Kopi enak, waktu lebih santai. Pesan online tanpa antre panjang.</div>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a href="#home" class="logo">IZA COFFEE</a>
+    <button class="icon-btn nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">&#9776;</button>
+    <nav id="nav" class="nav" aria-label="Navigasi utama">
+      <a href="#menu">Menu</a>
+      <a href="#cara-pesan">Cara Pesan</a>
+      <a href="#tentang">Tentang Kami</a>
+    </nav>
+    <div class="bar-end">
+      <a href="#staff" class="staff-link">Panel Staf</a>
+      <button class="btn btn-light" id="openCart">Keranjang <span class="badge" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="customerView">
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Waktu santai, kopi favorit.</h1>
+        <p class="lead">Pilih menu dari meja atau dari rumah, kirim pesanan, dan kami siapkan. Tidak perlu berdiri di depan kasir.</p>
+        <a class="btn" href="#menu">Jelajahi Menu</a>
+        <p class="fine">Pesan untuk dine-in atau take out. Kami tidak menyediakan antar ke rumah.</p>
+      </div>
+      <aside class="ticket" aria-label="Contoh status pesanan">
+        <div class="ticket-top"><strong>IZA-0042</strong><span class="pill p-proses">Diproses</span></div>
+        <ul>
+          <li><span>2 &times; Caffe Latte</span><span>Rp 56.000</span></li>
+          <li><span>1 &times; Croissant Butter</span><span>Rp 24.000</span></li>
+        </ul>
+        <div class="ticket-foot"><span>Dine-in, Meja 7</span><strong>Rp 80.000</strong></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="wrap values">
+      <div><h3>Pesan lebih praktis</h3><p>Semua menu ada di layar ponsel Anda, lengkap dengan harga.</p></div>
+      <div><h3>Antrean berkurang</h3><p>Pesanan masuk langsung ke staf tanpa menunggu giliran kasir.</p></div>
+      <div><h3>Nikmati dengan nyaman</h3><p>Duduk dulu, pesanan diantar ke meja atau siap diambil.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="menu">
+    <div class="wrap">
+      <h2>Menu</h2>
+      <div class="tools">
+        <label class="sr" for="search">Cari menu</label>
+        <input id="search" type="search" placeholder="Cari kopi, minuman, atau makanan">
+        <div class="chips" id="chips" role="group" aria-label="Filter kategori"></div>
+      </div>
+      <div class="grid" id="menuGrid"></div>
+      <p class="empty" id="menuEmpty" hidden>Menu tidak ditemukan. Coba kata kunci lain atau pilih Semua.</p>
+    </div>
+  </section>
+
+  <section class="section alt" id="cara-pesan">
+    <div class="wrap">
+      <h2>Cara pesan</h2>
+      <ol class="steps">
+        <li><h3>Pilih menu</h3><p>Tambahkan minuman dan makanan ke keranjang.</p></li>
+        <li><h3>Konfirmasi pesanan</h3><p>Pilih dine-in atau take out, lalu kirim pesanan.</p></li>
+        <li><h3>Nikmati pesanan</h3><p>Tunggu di meja atau ambil di kafe saat statusnya Selesai.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="tentang">
+    <div class="wrap cta">
+      <div>
+        <h2>Sudah tahu mau pesan apa?</h2>
+        <p>IZA COFFEE membuat pemesanan jadi singkat supaya waktu Anda tetap untuk menikmati kopi.</p>
+      </div>
+      <a class="btn" href="#menu">Mulai Pilih Menu</a>
+    </div>
+  </section>
+</main>
+
+<main id="staffView" hidden>
+  <section class="section">
+    <div class="wrap">
+      <div id="staffLogin" class="panel narrow">
+        <h2>Masuk Panel Staf</h2>
+        <form id="loginForm">
+          <label for="pin">PIN staf</label>
+          <input id="pin" type="password" inputmode="numeric" autocomplete="off" required>
+          <p class="err" id="loginErr" role="alert"></p>
+          <button class="btn" type="submit">Masuk</button>
+        </form>
+        <p class="fine">Mode demo: PIN dicek di browser dan tidak aman. Untuk penggunaan nyata, login harus diverifikasi server.</p>
+      </div>
+      <div id="staffDash" hidden>
+        <div class="dash-head"><h2>Panel Staf</h2><button class="btn btn-ghost" id="logout">Keluar</button></div>
+        <div class="stats" id="stats"></div>
+        <div id="orderList" class="orders"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <div><div class="logo">IZA COFFEE</div><p>Coffee shop dengan pemesanan digital. Dine-in dan ambil sendiri.</p></div>
+    <div><p>cipadung 93, jl embah jaksa<br>Buka setiap hari, 08.00-22.00<br>Instagram @izacoffee</p></div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay" hidden></div>
+
+<aside class="drawer" id="cartDrawer" aria-label="Keranjang" aria-hidden="true">
+  <div class="drawer-head"><h2>Keranjang</h2><button class="icon-btn" id="closeCart" aria-label="Tutup keranjang">&times;</button></div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot"></div>
+</aside>
+
+<div class="modal" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="coTitle" hidden>
+  <div class="modal-card">
+    <button class="icon-btn modal-x" id="closeCheckout" aria-label="Tutup">&times;</button>
+    <form id="checkoutForm" novalidate>
+      <h2 id="coTitle">Checkout</h2>
+      <label for="cName">Nama pemesan</label>
+      <input id="cName" required autocomplete="name">
+      <fieldset>
+        <legend>Jenis pemesanan</legend>
+        <label class="opt"><input type="radio" name="type" value="Dine-in" checked> Dine-in</label>
+        <label class="opt"><input type="radio" name="type" value="Ambil Sendiri"> Take-out</label>
+      </fieldset>
+      <div id="tableBox">
+        <label for="cTable">Nomor meja</label>
+        <input id="cTable" inputmode="numeric" placeholder="Contoh: 7">
+        <p class="fine">Pesanan akan diantar ke meja Anda.</p>
+      </div>
+      <p class="fine" id="pickupInfo" hidden>Ambil pesanan langsung di kafe setelah statusnya Selesai.</p>
+      <fieldset>
+        <legend>Metode pembayaran</legend>
+        <label class="opt"><input type="radio" name="pay" value="Bayar di Kasir" checked> Bayar di Kasir</label>
+        <label class="opt off"><input type="radio" name="pay" value="Pembayaran Online" disabled> Pembayaran Online (segera hadir)</label>
+      </fieldset>
+      <label for="cNote">Catatan tambahan</label>
+      <textarea id="cNote" rows="2" placeholder="Contoh: less sugar"></textarea>
+      <div class="summary" id="coSummary"></div>
+      <p class="err" id="coErr" role="alert"></p>
+      <button class="btn block" type="submit">Konfirmasi Pesanan</button>
+    </form>
+    <div id="doneBox" hidden></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
