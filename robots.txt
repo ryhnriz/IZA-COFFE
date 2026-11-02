@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iza-coffee-4.vercel.app/sitemap.xml
